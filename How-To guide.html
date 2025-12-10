@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas Cookie Baking Guide</title>
+    <style>
+        /* --- CSS STYLES --- */
+        @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Open+Sans:wght@400;600&display=swap');
+
+        :root {
+            --xmas-red: #D42426;
+            --xmas-green: #165B33;
+            --xmas-gold: #F8B229;
+            --cream: #FDF6E3;
+            --text-dark: #333;
+            --snow-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--cream);
+            background-image: radial-gradient(var(--xmas-gold) 1px, transparent 1px);
+            background-size: 30px 30px; /* Subtle polka dot pattern */
+            color: var(--text-dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--xmas-red);
+            color: var(--snow-white);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-bottom: 5px solid var(--xmas-green);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 4rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-family: 'Mountains of Christmas', cursive;
+            color: var(--xmas-green);
+            font-size: 2.5rem;
+            border-bottom: 2px dashed var(--xmas-red);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            background: var(--snow-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Recipe Card Styling */
+        .recipe-card {
+            background: var(--snow-white);
+            border: 2px solid var(--xmas-green);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 768px) {
+            .recipe-card {
+                flex-direction: row;
+            }
+        }
+
+        .recipe-image {
+            flex: 1;
+            min-height: 300px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid var(--xmas-gold);
+        }
+
+        @media (min-width: 768px) {
+            .recipe-image {
+                border-bottom: none;
+                border-right: 5px solid var(--xmas-gold);
+            }
+        }
+
+        .recipe-content {
+            flex: 1.5;
+            padding: 2rem;
+        }
+
+        h3 {
+            color: var(--xmas-red);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        /* Ingredients List Custom Bullets */
+        ul.ingredients li {
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        ul.ingredients li::before {
+            content: "🍪";
+            position: absolute;
+            left: 0;
+            color: var(--xmas-gold);
+        }
+
+        /* Instructions List */
+        ol.instructions {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        ol.instructions li {
+            counter-increment: step-counter;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        ol.instructions li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--xmas-red);
+            color: white;
+            font-weight: bold;
+            width: 1.8rem;
+            height: 1.8rem;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 1.8rem;
+        }
+
+        /* Resources Section */
+        .resources {
+            background-color: var(--xmas-green);
+            color: var(--snow-white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .resources h2 {
+            color: var(--xmas-gold);
+            border-bottom: 2px dashed var(--snow-white);
+        }
+
+        .resources a {
+            color: var(--cream);
+            font-weight: bold;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .resources a:hover {
+            color: var(--xmas-gold);
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Specific Images */
+        .img-sugar { background-image: url('https://images.unsplash.com/photo-1544256269-e092193b2169?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .img-ginger { background-image: url('https://images.unsplash.com/photo-1607314986607-744317454867?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+        .img-snowball { background-image: url('https://images.unsplash.com/photo-1512403666205-081e747b3149?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Holiday Baking Guide</h1>
+        <p>Your step-by-step guide to the most delicious Christmas treats</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="intro">
+            <p>Welcome to the ultimate holiday baking resource! Below you will find recipes for three classic Christmas cookies. Put on your apron, preheat that oven, and let's spread some holiday cheer.</p>
+        </div>
+
+        <!-- Recipe 1: Classic Sugar Cookies -->
+        <article class="recipe-card">
+            <div class="recipe-image img-sugar" role="img" aria-label="Decorated star shaped sugar cookies"></div>
+            <div class="recipe-content">
+                <h2>Classic Cut-Out Sugar Cookies</h2>
+                <p>The quintessential Christmas cookie. Perfect for decorating with royal icing and sprinkles.</p>
+                
+                <h3>Ingredients</h3>
+                <ul class="ingredients">
+                    <li>3 cups all-purpose flour</li>
+                    <li>3/4 teaspoon baking powder</li>
+                    <li>1 cup unsalted butter, softened</li>
+                    <li>1 cup granulated sugar</li>
+                    <li>1 egg</li>
+                    <li>1 tablespoon milk</li>
+                    <li>Powdered sugar (for rolling out)</li>
+                </ul>
+
+                <h3>Instructions</h3>
+                <ol class="instructions">
+                    <li><strong>Mix Dry Ingredients:</strong> Sift together flour and baking powder in a small bowl. Set aside.</li>
+                    <li><strong>Cream Butter & Sugar:</strong> In a large bowl, beat butter and sugar until light and fluffy. Add egg and milk; beat to combine.</li>
+                    <li><strong>Combine:</strong> Gradually add flour mixture to butter mixture; beat until just combined.</li>
+                    <li><strong>Chill:</strong> Divide dough in half, wrap in waxed paper, and refrigerate for 2 hours.</li>
+                    <li><strong>Preheat & Roll:</strong> Preheat oven to 375°F (190°C). Sprinkle surface with powdered sugar and roll out dough to 1/4-inch thickness.</li>
+                    <li><strong>Cut & Bake:</strong> Cut into festive shapes using cookie cutters. Place on greased baking sheets. Bake for 7-9 minutes or until edges are firm.</li>
+                    <li><strong>Cool:</strong> Cool on wire racks completely before decorating.</li>
+                </ol>
+            </div>
+        </article>
+
+        <!-- Recipe 2: Gingerbread Men -->
+        <article class="recipe-card">
+            <div class="recipe-image img-ginger" role="img" aria-label="Gingerbread men cookies"></div>
+            <div class="recipe-content">
+                <h2>Spiced Gingerbread Men</h2>
+                <p>Warm spices and molasses make this sturdy cookie a holiday favorite for building houses or little men.</p>
+                
+                <h3>Ingredients</h3>
+                <ul class="ingredients">
+                    <li>3 cups all-purpose flour</li>
+                    <li>1 teaspoon baking soda</li>
+                    <li>1 tablespoon ground ginger</li>
+                    <li>1 tablespoon ground cinnamon</li>
+                    <li>1/2 cup unsalted butter, softened</li>
+                    <li>1/2 cup dark brown sugar</li>
+                    <li>2/3 cup molasses</li>
+                    <li>1 egg</li>
+                </ul>
+
+                <h3>Instructions</h3>
+                <ol class="instructions">
+                    <li><strong>Whisk Spices:</strong> Whisk together flour, baking soda, ginger, cloves, and cinnamon in a medium bowl.</li>
+                    <li><strong>Mix Wet Ingredients:</strong> In a separate large bowl, beat butter, brown sugar, and egg until fluffy. Stir in molasses.</li>
+                    <li><strong>Form Dough:</strong> Gradually stir the flour mixture into the molasses mixture until a stiff dough forms.</li>
+                    <li><strong>Chill:</strong> Divide dough, wrap in plastic, and chill for at least 1 hour.</li>
+                    <li><strong>Preheat:</strong> Preheat oven to 350°F (175°C).</li>
+                    <li><strong>Roll & Cut:</strong> Roll dough out to 1/4 inch thickness. Cut with gingerbread man cutters.</li>
+                    <li><strong>Bake:</strong> Place cookies 1 inch apart on baking sheets. Bake for 8-10 minutes. Cool on wire racks.</li>
+                </ol>
+            </div>
+        </article>
+
+        <!-- Recipe 3: Snowball Cookies -->
+        <article class="recipe-card">
+            <div class="recipe-image img-snowball" role="img" aria-label="Powdered sugar snowball cookies"></div>
+            <div class="recipe-content">
+                <h2>Pecan Snowballs (Russian Tea Cakes)</h2>
+                <p>Buttery, nutty, and coated in "snow," these melt-in-your-mouth cookies are incredibly easy to make.</p>
+                
+                <h3>Ingredients</h3>
+                <ul class="ingredients">
+                    <li>1 cup unsalted butter, softened</li>
+                    <li>1/2 cup powdered sugar</li>
+                    <li>1 teaspoon vanilla extract</li>
+                    <li>2 1/4 cups all-purpose flour</li>
+                    <li>3/4 cup finely chopped pecans</li>
+                    <li>1/4 teaspoon salt</li>
+                    <li>Extra powdered sugar for coating</li>
+                </ul>
+
+                <h3>Instructions</h3>
+                <ol class="instructions">
+                    <li><strong>Preheat:</strong> Preheat oven to 400°F (200°C).</li>
+                    <li><strong>Mix Butter & Sugar:</strong> Mix butter, 1/2 cup powdered sugar, and vanilla in a large bowl until thoroughly combined.</li>
+                    <li><strong>Add Flour & Nuts:</strong> Stir in flour, salt, and nuts until dough holds together.</li>
+                    <li><strong>Shape:</strong> Shape dough into 1-inch balls. Place on ungreased baking sheets.</li>
+                    <li><strong>Bake:</strong> Bake for 10-12 minutes until set but not brown.</li>
+                    <li><strong>Coat:</strong> While still warm, roll cookies in extra powdered sugar. Let cool, then roll in sugar again for a snowy look.</li>
+                </ol>
+            </div>
+        </article>
+
+        <!-- Resources Section -->
+        <section class="resources">
+            <h2>Baking Resources & Further Reading</h2>
+            <p>Need more tips or history on these treats? Check out these links:</p>
+            <br>
+            <a href="https://en.wikipedia.org/wiki/Christmas_cookie" target="_blank">Wikipedia: Christmas Cookies</a>
+            <a href="https://www.allrecipes.com/recipes/841/holidays-and-events/christmas/cookies/" target="_blank">AllRecipes Collection</a>
+            <a href="https://sallysbakingaddiction.com/category/seasonal/christmas-cookies/" target="_blank">Sally's Baking Addiction</a>
+            <a href="https://www.foodnetwork.com/recipes/photos/christmas-cookies" target="_blank">Food Network Top 50</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Holiday Baking Guide. Happy Holidays!</p>
+    </footer>
+
+</body>
+</html>

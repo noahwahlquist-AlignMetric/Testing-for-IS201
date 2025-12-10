@@ -1,0 +1,62 @@
+body{
+    background-color: beige;
+    color:rgb(235, 141, 40)
+}
+h1{
+    font-size:36px;
+    color:rgb(12, 138, 10);
+    text-align: center;
+    text-decoration: underline;
+    text-decoration: wavy;
+    text-decoration: double;
+}
+p{
+    font-size:25px;
+}
+/*this is a comment*/
+
+.common{
+    background-color: rgb(87, 88, 90);
+    border: 2px solid white;
+    position: absolute;
+    color:azure;
+}
+
+.left{
+    top:115px;
+    Left:15px;
+    width: 100px;
+    bottom: 40px;
+}
+
+.main{
+    top:115px;
+    Left:130px;
+    width: 140px;
+    bottom: 40px
+}
+
+.right{
+    top:115px;
+    right:15px;
+    width: 100px;
+    bottom: 40px;
+}
+
+.footer{
+    bottom: 100px;
+    height: 75px;
+    left: 15px;
+    right: 25px;
+    position: fixed;
+    background-color: black;
+    border: 2px solid white;
+}
+
+.header{
+    z-index: 10;
+}
+
+.redtext{
+    color: red;
+}
